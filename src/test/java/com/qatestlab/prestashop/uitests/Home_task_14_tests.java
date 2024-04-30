@@ -43,14 +43,14 @@ public class Home_task_14_tests {
 //        loginPage.login("standard_user", "secret_sauce");
 //    }
     @Test
-    public void checkSortByPriceFromLowestToHighest() {
+    public void checkSortByPriceFromLowestToHighest()  {
         StartDressesPages dressesPages = new StartDressesPages(driver);
         WebDriverWait waiter = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         Select select = new Select(dressesPages.sortByQuantityOnPage);
         select.selectByValue("60");
 
-        List<Product> listDresses = dressesPages.getDressesList();
+        List<Product> listDresses = dressesPages.getProducts();
 
         Select selectSortingByPriceLowestFirst = new Select(dressesPages.productsSortByPrice);
         // Select selectSortingByPriceLowestFirst = new Select(waiter.until(ExpectedConditions.elementToBeClickable(By.id("selectProductSort"))));
